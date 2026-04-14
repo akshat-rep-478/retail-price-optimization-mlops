@@ -35,7 +35,7 @@ pip install zenml["server"]
 zenml up
 ```
 
-If you are running the `run_cid_pipeline.p`y` script, you will also need to install some integrations using ZenML:
+If you are running the `run_pipeline.py` script, you will also need to install some integrations using ZenML:
 
 ```
 zenml integration install mlflow -y
@@ -65,5 +65,15 @@ Our standard training pipeline consists of several steps:
 - `split`: Splits the dataset into train and eval splits.
 - `train`: Trains the model on the training split.
 - `evaluate`: Evaluates the model on the eval split.
-- `decision`:
 - `deploy`: Deploys the model to a BentoML endpoint.
+
+### 📊 Pipeline Visualization (DAG)
+Below is the visual representation of the pipeline as seen in the ZenML Dashboard:
+
+![ZenML Pipeline DAG](assets/pipeline_dag.png)
+
+## 🏃 How to Run
+To run the pipeline and see the results yourself, use the following command:
+
+```bash
+python run_pipeline.py
